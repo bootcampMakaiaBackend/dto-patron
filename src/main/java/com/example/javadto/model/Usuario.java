@@ -15,23 +15,29 @@ public class Usuario {
     private String nombre;
     @Column(name = "email")
     private String email;
-    @Column(name = "usuario")
-    private String usuario;
+    @Column(name = "alias")
+    private String alias;
     @Column(name = "contrasena")
     private String contrasena;
     @Column(name = "edad")
     private String edad;
+    @Column(name = "habilitada")
+    private boolean cuentaHabilitada;
+    @Column(name = "apellido")
+    private String apellido;
 
-    public Usuario(Integer cedula, String nombre, String email, String usuario, String contrasena, String edad) {
+    public Usuario() {
+    }
+
+    public Usuario(Integer cedula, String nombre, String email, String alias, String contrasena, String edad, boolean cuentaHabilitada, String apellido) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.email = email;
-        this.usuario = usuario;
+        this.alias = alias;
         this.contrasena = contrasena;
         this.edad = edad;
-    }
-
-    public Usuario() {
+        this.cuentaHabilitada = cuentaHabilitada;
+        this.apellido = apellido;
     }
 
     public Integer getCedula() {
@@ -46,8 +52,8 @@ public class Usuario {
         return email;
     }
 
-    public String getUsuario() {
-        return usuario;
+    public String getAlias() {
+        return alias;
     }
 
     public String getContrasena() {
@@ -56,5 +62,13 @@ public class Usuario {
 
     public String getEdad() {
         return edad;
+    }
+
+    public boolean isCuentaHabilitada() {
+        return cuentaHabilitada;
+    }
+
+    public String getApellido() {
+        return apellido;
     }
 }
